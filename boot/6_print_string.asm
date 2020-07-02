@@ -15,7 +15,13 @@ print_string:
         jne loop
     popa
     ret
-
+print_new_line:
+    mov ah , 0x0e
+    mov al, 0x0d
+    int 0x10
+    mov al, 0x0a
+    int 0x10
+    ret
 ; hello:
 ;     db 'Hello , World !' , 0 ;
 
