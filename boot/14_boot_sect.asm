@@ -7,9 +7,9 @@ mov [BOOT_DRIVE], dl
 mov bp, 0x9000 ; Set the stack.
 mov sp, bp
 
-call print_new_line
-mov bx, MSG_REAL_MODE
-call print_string
+; call print_new_line
+; mov bx, MSG_REAL_MODE
+; call print_string
 
 ;call print_new_line
 ;mov bx, KERNEL_VERSION
@@ -34,8 +34,8 @@ jmp $
 [bits 16]
 
 load_kernel:
-	mov bx, MSG_LOAD_KERNEL
-	call print_string
+	; mov bx, MSG_LOAD_KERNEL
+	; call print_string
 
 	mov bx, KERNEL_OFFSET
 	mov dh, 15
@@ -48,8 +48,8 @@ load_kernel:
 
 ; This is where we arrive after switching to and initialising protected mode.
 BEGIN_PM:
-	mov ebx , MSG_PROT_MODE
-	call print_string_pm ; Use our 32- bit print routine.
+	; mov ebx , MSG_PROT_MODE
+	; call print_string_pm ; Use our 32- bit print routine.
 
 	call KERNEL_OFFSET
 	
