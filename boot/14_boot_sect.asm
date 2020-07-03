@@ -48,8 +48,8 @@ load_kernel:
 
 ; This is where we arrive after switching to and initialising protected mode.
 BEGIN_PM:
-	; mov ebx , MSG_PROT_MODE
-	; call print_string_pm ; Use our 32- bit print routine.
+	mov ebx , MSG_PROT_MODE
+	call print_string_pm ; Use our 32- bit print routine.
 
 	call KERNEL_OFFSET
 	
